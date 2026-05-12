@@ -1,0 +1,141 @@
+### TO REGISTER USER
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "firstName": "user",
+    "lastName": "Doe",
+    "email": "3@gmail.com",
+    "password": "password",
+    "role": "USER"
+}
+
+### TO REGISTER AUTHOR
+POST http://localhost:4000/author-api/authors
+Content-Type: application/json
+
+{
+    "firstName": "Riyaz",
+    "lastName": "Doe",
+    "email": "12345",
+    "password": "password",
+    "role": "AUTHOR"
+}
+
+### TO REGISTER ADMIN
+POST http://localhost:4000/admin-api/admins
+Content-Type: application/json
+
+{
+  "firstName": "System",
+  "lastName": "Admin",
+  "email": "admin@example.com",
+  "password": "adminpassword"
+}
+
+### TO LOGIN AUTHOR
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+
+    "email": "12345",
+    "password": "password"
+}
+
+### TO LOGIN USER
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email": "3@gmail.com",
+    "password": "password"
+}
+
+### TO CREATE ARTICLE
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{   "author":"6a032529130f4f91f1f67e2a",
+    "title": "Art  icle",
+    "category":"Technology",
+    "content": "Content"
+}
+    
+### TO GET ARTICLE
+GET http://localhost:4000/author-api/articles/69afde25c70deb683a0eb6af
+
+###
+
+
+### TO UPDATE ARTICLE
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{   "author":"6a032529130f4f91f1f67e2a",
+    "articleId":"6a032529130f4f91f1f67e2b",
+    "title": "updated Article 1",
+    "category":"Technology",
+    "content": "updated Content 1"
+}
+
+### TO DELETE ARTICLE
+PATCH  http://localhost:4000/author-api/articles/69ae87ca18acc73f4994fb84
+Content-Type: application/json
+
+{
+    "author":"69ae879b18acc73f4994fb7f"
+}
+
+### TO LOGOUT 
+GET http://localhost:4000/common-api/logout
+
+
+### TO READ ARTICLES
+GET http://localhost:4000/user-api/read-articles
+
+
+### To read all artices
+
+GET http://localhost:4000/admin-api/articles/69ae879b18acc73f4994fb7f
+
+###To block the user
+
+PUT http://localhost:4000/admin-api/block-user
+Content-Type: application/json
+
+{
+    "userId": "698974f06bccfa6e29e9d1f1"
+}
+
+###
+
+PUT http://localhost:4000/admin-api/unblock-user
+Content-Type: application/json
+
+{
+    "userId": "698974f06bccfa6e29e9d1f1"
+}
+
+### Change the password
+PUT http://localhost:4000/common-api/change-password
+Content-Type: application/json
+
+{
+    "userId":"69ae879b18acc73f4994fb7f",
+    "currentPassword":"111",
+    "newPassword":"111"
+}
+
+
+### TO ADD COMMENT
+PUT http://localhost:4000/user-api/articles
+Content-Type: application/json
+
+{
+    "articleId": "69afde25c70deb683a0eb6af",
+    "comment": "Nice"
+}
+
+### TEST
+GET http://localhost:4000/test

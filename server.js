@@ -1,11 +1,11 @@
 import express from 'express'
 import { connect } from 'mongoose'
 import { config } from 'dotenv'
-import { userRouter } from './APIs/userAPI.js'
+import { userRouter } from './APIs/UserAPI.js'
 import { authorRouter } from './APIs/AuthorAPI.js'
 import { adminRouter } from './APIs/AdminAPI.js'
 import cookieParser from 'cookie-parser'
-import { commonRouter } from './APIs/commonAPI.js'
+import { commonRouter } from './APIs/CommonAPI.js'
 import cors from 'cors'
 
 
@@ -47,6 +47,7 @@ const connectDB = async () => {
         await connect(process.env.DB_URL)
         console.log("DB connection success")
         app.listen(process.env.PORT, () => console.log("server started in port 3000"))
+       
     } catch (err) {
         console.log("Err in DB connection", err)
     }

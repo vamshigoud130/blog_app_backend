@@ -5,7 +5,7 @@ import { userRouter } from './APIs/UserAPI.js'
 import { authorRouter } from './APIs/AuthorAPI.js'
 import { adminRouter } from './APIs/AdminAPI.js'
 import cookieParser from 'cookie-parser'
-import { commonRouter } from './APIs/CommonAPI.js'
+import { commonRouter } from './APIs/Common_API.js'
 import cors from 'cors'
 
 

@@ -1,5 +1,4 @@
 import { Schema, model } from "mongoose";
-import { timeStamp } from "node:console";
 
 //creatind user comment schmea
 const userCommentSchema = new Schema({

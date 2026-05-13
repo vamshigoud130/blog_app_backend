@@ -14,7 +14,7 @@ commonRouter.post("/login", async (req, res) => {
     //save response token as httpOly cookie
     res.cookie('token', token, {
         httpOnly: true,
-        sameSite: 'lax',
+        sameSite: 'None',
         secure: false
     });
 
@@ -29,7 +29,7 @@ commonRouter.get("/logout", async (req, res) => {
     res.clearCookie('token',
         {
             httpOnly: true,
-            sameSite: 'lax',
+            sameSite: 'None',
             secure: false
         }
     );

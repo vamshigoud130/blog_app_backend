@@ -11,11 +11,17 @@ import cors from 'cors'
 
 config()//process .env
 
-const app = express()
+const app = express();
+
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+    origin: [
+        "https://blog-app-frontend-omega-one.vercel.app",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173"
+        
+    ],
     credentials: true
-}))
+}));
 
 //Add body parser middleware
 app.use(express.json())

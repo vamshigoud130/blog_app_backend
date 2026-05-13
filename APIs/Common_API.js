@@ -11,11 +11,12 @@ commonRouter.post("/login", async (req, res) => {
     let userCred = req.body;
     //call authenticate service
     let { token, user } = await authenticate({ ...userCred });
-    //save response token as httpOly cookie
+    //save response token as httpOnly cookie
     res.cookie('token', token, {
         httpOnly: true,
         sameSite: 'None',
-        secure: false
+        secure: process.env.NODE_ENV === 'production',
+        domain: undefined // Auto-detect domain
     });
 
     //send response
@@ -30,7 +31,8 @@ commonRouter.get("/logout", async (req, res) => {
         {
             httpOnly: true,
             sameSite: 'None',
-            secure: false
+            secure: process.env.NODE_ENV === 'production',
+            domain: undefined // Auto-detect domain
         }
     );
     //send response
